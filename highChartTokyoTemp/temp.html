@@ -1,0 +1,67 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+		<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            title: {
+                text: '東京１週間(7/26(土)~7/31(木))天気予報',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'Source: goo天気 - http://weather.goo.ne.jp/',
+                x: -20
+            },
+            xAxis: {
+                categories: ['土', '日', '月', '火', '水', '木']
+            },
+            yAxis: {
+                title: {
+                    text: '温度（最高・最低） (°C)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '°C'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: '東京（最高温度）',
+                data: [33, 34, 33, 31, 31, 31]
+            }
+						,{
+							name: '東京（最低温度）',
+							data: [26, 26, 26, 25, 24, 24]
+						}
+						]
+        });
+    });
+
+
+		</script>
+	</head>
+	<body>
+<script src="./highcharts.js"></script>
+<script src="./exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	</body>
+</html>
